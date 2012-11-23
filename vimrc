@@ -18,6 +18,7 @@ endif
 
 " ================ General Config ====================
 
+scriptencoding utf-8            "Need to set this up for listchars 
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
