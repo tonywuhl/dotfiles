@@ -38,8 +38,8 @@ function prompt_kylewest_setup {
 
   # editor
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format "%B%F{green}$>%f%b"
-  zstyle ':prezto:module:editor:info:keymap:alternate' format "%B%F{magenta}<#%f%b"
+  zstyle ':prezto:module:editor:info:keymap:primary' format "%B%F{green}➤ %f%b"
+  zstyle ':prezto:module:editor:info:keymap:alternate' format "%B%F{magenta}◆ %f%b"
 
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '[ %v ]'
