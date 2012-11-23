@@ -31,10 +31,8 @@ alias lsg='ll | grep'
 alias ae='vi $yadr/zsh/aliases.zsh' #alias edit
 alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
 
-# vim using
-if [ "$(command -v brew)" ]; then
-  alias vim=$(brew ls macvim | grep Contents/MacOS/Vim)
-fi
+# We deleted the vim alias because MacVim might be installed
+# through non-brew methods as well
 
 # vimrc editing
 alias ve='vi ~/.vimrc'
