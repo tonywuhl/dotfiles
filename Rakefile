@@ -90,9 +90,13 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install ack ctags git hub}
+  run %{brew install ack ctags git hub bash zsh tmux reattach-to-user-namespace}
   puts
   puts
+
+  # On Mac OS X:
+  # Caveat 1: add /usr/local/bin/bash and /usr/local/bin/zsh to /etc/shells
+  # Caveat 2: mv /etc/zshenv /etc/zprofile
 end
 
 def install_fonts
