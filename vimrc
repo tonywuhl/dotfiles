@@ -1,6 +1,7 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+scriptencoding utf-8            "Need to set this up for listchars 
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
@@ -18,7 +19,7 @@ endif
 
 " ================ General Config ====================
 
-scriptencoding utf-8            "Need to set this up for listchars 
+set encoding=utf-8
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
