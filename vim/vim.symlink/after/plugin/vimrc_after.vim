@@ -1,11 +1,12 @@
-" https://github.com/carlhuda/janus/blob/master/janus/vim/core/janus/after/plugin/vimrc_after.vim
 " Customization
-"
-" This loads after the janus plugins so that janus-specific plugin mappings can
-" be overwritten.
+" Loads post-configuration settings
 
-if filereadable(expand("~/.yadr/vim/after/.vimrc.after"))
-  source ~/.yadr/vim/after/.vimrc.after
+if !has("gui_running")
+  if &t_Co >= 256
+    let g:solarized_termtrans = 1
+	set background=dark
+    colorscheme solarized
+  endif
 endif
 
 if filereadable(expand("~/.vimrc.after"))

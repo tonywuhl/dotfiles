@@ -19,9 +19,5 @@ if has("gui_running")
 else
   "dont load csapprox if we no gui support - silences an annoying warning
   let g:CSApprox_loaded = 1
-  if &t_Co >= 256
-    let g:solarized_termtrans = 1
-    colorscheme solarized
-  endif
 endif
 

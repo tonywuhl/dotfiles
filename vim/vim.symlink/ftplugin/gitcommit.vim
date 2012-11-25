@@ -1,7 +1,7 @@
+" Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
   finish
 endif
-
-let b:did_ftplugin = 1 " Don't load twice in one buffer
+let b:did_ftplugin = 1
 
 setlocal spell
