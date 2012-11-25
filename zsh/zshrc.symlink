@@ -38,6 +38,9 @@ prompt mganjoo
 # Source every additional .zsh file in this repo
 for config_file ($DOTFILESDIR/zsh/custom/*.zsh) source $config_file
 
+# Add completions to fpath
+fpath=($fpath $HOME/.zsh.completions)
+
 # Load any users customizations after load
 if [ -d $HOME/.zsh.after/ ]; then
   if [ "$(ls -A $HOME/.zsh.after/)" ]; then
