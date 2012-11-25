@@ -30,11 +30,10 @@ if [ -e ~/.secrets ]; then
   source ~/.secrets
 fi
 
-# Load prezto themes and user-specific themes in ~/.zsh.prompts
-fpath=($DOTFILESDIR/zsh/prezto-themes $HOME/.zsh.prompts $fpath)
-promptinit
-
 # Load default prompt
+fpath=($DOTFILESDIR/zsh/prompts $HOME/.zsh.prompts $fpath)
+autoload -Uz promptinit
+promptinit
 prompt mganjoo
 
 # Source every additional .zsh file in this repo

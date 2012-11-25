@@ -1,10 +1,3 @@
-#
-# A theme based on sorin theme
-#  * ruby info shown on the right
-#  * git info on the left
-#  * editor mode as $> or <#
-#  * single line prompt
-#
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #   Kyle West <kswest@gmail.com>
