@@ -1,0 +1,48 @@
+#
+# Execute commands at the start of an interactive session.
+#
+# Milind Ganjoo <milind.ganjoo@gmail.com>
+#
+
+export DOTFILESDIR=$HOME/.dotfiles
+
+# Load prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Load any user customizations prior to load
+if [ -d $HOME/.zsh.before/ ]; then
+  if [ "$(ls -A $HOME/.zsh.before/)" ]; then
+    for config_file ($HOME/.zsh.before/*.zsh) source $config_file
+  fi
+fi
+
+# Add directories to the path
+if [ -d $HOME/bin/ ]; then
+    # Override path with user home directory at front
+    export PATH=$HOME/bin/:$PATH
+fi
+export PATH=$PATH:$DOTFILESDIR/bin:$DOTFILESDIR/bin/yadr
+
+# Load file with sensitive information that shouldn't be checked in
+if [ -e ~/.secrets ]; then
+  source ~/.secrets
+fi
+
+# Load prezto themes and user-specific themes in ~/.zsh.prompts
+fpath=($DOTFILESDIR/zsh/prezto-themes $HOME/.zsh.prompts $fpath)
+promptinit
+
+# Load default prompt
+prompt mganjoo
+
+# Source every additional .zsh file in this repo
+for config_file ($DOTFILESDIR/zsh/**/*.zsh) source $config_file
+
+# Load any users customizations after load
+if [ -d $HOME/.zsh.after/ ]; then
+  if [ "$(ls -A $HOME/.zsh.after/)" ]; then
+    for config_file ($HOME/.zsh.after/*.zsh) source $config_file
+  fi
+fi

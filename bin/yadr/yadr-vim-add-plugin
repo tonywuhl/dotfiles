@@ -2,7 +2,7 @@
 require File.join(File.dirname(__FILE__), 'default_libs')
 
 GitStyleBinary.command do
-  version "yadr-add-vim-plugin 1.0"
+  version "yadr-vim-add-plugin 1.0"
 
   short_desc "Add a vim plugin from a github repo"
   opt :url, "Github url (http:// or git://)", :type => String

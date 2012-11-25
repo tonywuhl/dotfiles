@@ -1,4 +1,4 @@
-# Use Ctrl-x,Ctrl-l to get the output of the last command
+# Use <C-x,C-l> to get the output of the last command
 zmodload -i zsh/parameter
 insert-last-command-output() {
 LBUFFER+="$(eval $history[$((HISTCMD-1))])"

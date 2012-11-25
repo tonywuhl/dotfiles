@@ -1,18 +1,13 @@
 # Aliases in this file are bash and zsh compatible
 
-# Don't change. The following determines where YADR is installed.
-yadr=$HOME/.yadr
-
 # YADR support
 alias yav='yadr vim-add-plugin'
-alias yuv='yadr update-plugins' #FIXME: backwards compatibility. Kill me after Jan 1, 2013
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
 
-# PS
+# Viewing processes
 alias psa="ps aux"
 alias psg="ps aux | grep "
-alias psr='ps aux | grep ruby'
 
 # Moving around
 alias ..='cd ..'
@@ -28,20 +23,18 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi $yadr/zsh/aliases.zsh' #alias edit
-alias ar='source $yadr/zsh/aliases.zsh'  #alias reload
+alias ae='vi $DOTFILESDIR/zsh/aliases.zsh' # alias edit
+alias ar='source $DOTFILESDIR/zsh/aliases.zsh'  # alias reload
 
-# We deleted the vim alias because MacVim might be installed
-# through non-brew methods as well
-
-# vimrc editing
+# .vimrc editing
 alias ve='vi ~/.vimrc'
 
-# zsh profile editing
+# .zshrc editing and reloading
 alias ze='vi ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
+alias git='noglob git' # don't glob git to prevent conflicts
 alias gs='git status'
 alias gstsh='git stash'
 alias gst='git stash'
@@ -103,47 +96,14 @@ alias less='less -r'
 alias tf='tail -f'
 alias l='less'
 alias lh='ls -alt | head' # see the last modified files
-alias screen='TERM=screen screen'
 alias cl='clear'
 
-# Zippin
-alias gz='tar -zcvf'
+# Archive files
+alias guz='tar -zcvf'
 
-# Ruby
-alias c='rails c' # Rails 3
-alias co='script/console --irb=pry' # Rails 2
-alias ts='thin start'
-alias ms='mongrel_rails start'
-alias tfdl='tail -f log/development.log'
-alias tftl='tail -f log/test.log'
-
-# Vim/ctags "mctags = make ctags", using the ruby specific version
-# to save some time
-alias mctags=~/.bin/run_tags.rb #'/opt/local/bin/ctags -Rf ./tags *'
-
+# Kill
 alias ka9='killall -9'
 alias k9='kill -9'
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
-
-# TODOS
-# This uses NValt (NotationalVelocity alt fork) - http://brettterpstra.com/project/nvalt/
-# to find the note called 'todo'
-alias todo='open nvalt://find/todo'
-
-# Forward port 80 to 3000
-alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
-
-alias rdm='rake db:migrate'
-alias rdmr='rake db:migrate:redo'
-
-# Zeus
-alias zs='zeus server'
-alias zc='zeus console'
-
-# Rspec
-alias rs='rspec spec'
-
-# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
-alias sp='sprintly'

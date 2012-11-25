@@ -10,7 +10,6 @@ require 'fileutils'
 require 'cgi'
 
 $options = {}
-# $fymdhost = "http://fym.dev"
 $fymdhost = "http://heckyesmarkdown.com"
 
 optparse = OptionParser.new do|opts|
