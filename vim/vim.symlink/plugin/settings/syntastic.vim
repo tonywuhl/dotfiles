@@ -6,3 +6,7 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 "don't care about warnings
 let g:syntastic_quiet_warnings=0
+
+" Clear location list on :wq (we need to exit fast here)
+cabbrev wq w\|lcl\|q
+
