@@ -32,7 +32,6 @@ fi
 
 # Load default prompt
 fpath=($DOTFILESDIR/zsh/prompts $HOME/.zsh.prompts $fpath)
-autoload -Uz promptinit
 promptinit
 prompt mganjoo
 
