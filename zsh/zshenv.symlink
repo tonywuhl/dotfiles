@@ -68,10 +68,12 @@ manpath=(
   $manpath
 )
 
-for path_file in /etc/manpaths.d/*(.N); do
-  manpath+=($(<$path_file))
-done
-unset path_file
+if [[ "$OSTYPE" == darwin* ]]; then
+  for path_file in /etc/manpaths.d/*(.N); do
+    manpath+=($(<$path_file))
+  done
+  unset path_file
+fi
 
 # Set the list of directories that Zsh searches for programs.
 path=(
@@ -81,10 +83,12 @@ path=(
   $path
 )
 
-for path_file in /etc/paths.d/*(.N); do
-  path+=($(<$path_file))
-done
-unset path_file
+if [[ "$OSTYPE" == darwin* ]]; then
+  for path_file in /etc/paths.d/*(.N); do
+    path+=($(<$path_file))
+  done
+  unset path_file
+fi
 
 #
 # Temporary Files
