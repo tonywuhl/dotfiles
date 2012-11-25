@@ -38,7 +38,7 @@ promptinit
 prompt mganjoo
 
 # Source every additional .zsh file in this repo
-for config_file ($DOTFILESDIR/zsh/**/*.zsh) source $config_file
+for config_file ($DOTFILESDIR/zsh/custom/*.zsh) source $config_file
 
 # Load any users customizations after load
 if [ -d $HOME/.zsh.after/ ]; then
