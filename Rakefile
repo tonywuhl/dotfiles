@@ -82,10 +82,6 @@ def install_homebrew
   run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
   puts "Installing homebrew packages"
   run %{brew install ack ctags git hub bash zsh tmux reattach-to-user-namespace}
-  puts "Enter \"yes\" when you finish reading the caveats from the homebrew command"
-  begin
-    ans = STDIN.gets.chomp
-  end while !(ans == "y" || ans == "yes")
 end
 
 def install_fonts
