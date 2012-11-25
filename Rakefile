@@ -85,6 +85,7 @@ task :uninstall do
     end
 
   end
+  puts "Uninstalled all dotfiles."
 end
 
 task :default => 'install'
