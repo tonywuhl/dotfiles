@@ -23,8 +23,8 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi $DOTFILESDIR/zsh/aliases.zsh' # alias edit
-alias ar='source $DOTFILESDIR/zsh/aliases.zsh'  # alias reload
+alias ae='vi $DOTFILESDIR/zsh/custom/aliases.zsh' # alias edit
+alias ar='source $DOTFILESDIR/zsh/custom/aliases.zsh'  # alias reload
 
 # .vimrc editing
 alias ve='vi ~/.vimrc'
