@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 #
 # Execute commands at the start of an interactive session.
 #
@@ -38,7 +39,7 @@ prompt mganjoo
 # Source every additional .zsh file in this repo
 for config_file ($DOTFILESDIR/zsh/custom/*.zsh) source $config_file
 
-# Source every common .sh file in this repo
+# Source every common .sh fie in this repo
 for config_file ($DOTFILESDIR/shared/*.sh) source $config_file
 
 # Add completions to fpath

@@ -362,3 +362,6 @@
 	path = zsh/zprezto.symlink
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
+[submodule "bash/bash_it.symlink"]
+	path = bash/bash_it.symlink
+	url = http://github.com/revans/bash-it.git
