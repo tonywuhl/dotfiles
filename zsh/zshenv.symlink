@@ -65,6 +65,7 @@ infopath=(
 manpath=(
   /usr/local/share/man
   /usr/share/man
+  $HOME/.dotfiles/share/man
   $manpath
 )
 
