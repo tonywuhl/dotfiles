@@ -24,7 +24,7 @@ if [ -d $HOME/bin/ ]; then
     # Override path with user home directory at front
     export PATH=$HOME/bin/:$PATH
 fi
-export PATH=$PATH:$DOTFILESDIR/bin:$DOTFILESDIR/bin/yadr
+export PATH=$PATH:$DOTFILESDIR/bin
 
 # Load file with sensitive information that shouldn't be checked in
 if [ -e ~/.secrets ]; then
