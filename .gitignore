@@ -1,6 +1,7 @@
 custom/zsh
 vim/backups
 vim/view
+vim/vim.symlink/bundle/
 *un~
 vim/.netrwhist
 vim/tmp

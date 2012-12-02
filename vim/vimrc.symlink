@@ -7,10 +7,10 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
-" =============== Pathogen Initialization ===============
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
+" Load bundles
+source ~/.vimbundles
 
+" ================ Pathogen ==========================
 runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -84,3 +84,20 @@ set wildignore+=*.png,*.jpg,*.gif
 set scrolloff=8  "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+" ================ Appearance ========================
+set background=dark
+colorscheme solarized
+if has("gui_running")
+  set t_Co=256
+  set lines=30
+  set columns=100
+  set guifont=Inconsolata\ XL:h14,Inconsolata:h17,Monaco:h14
+
+  " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
+  autocmd VimEnter * set guitablabel=%N:\ %t\ %M
+endif
+
+" ================ Extra settings ========================
+set runtimepath+=~/.vim/extra/
+runtime keymap.vim
