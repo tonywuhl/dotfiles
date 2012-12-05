@@ -74,7 +74,7 @@ for linkable in "${linkables[@]}"; do
         ( $overwrite || $overwrite_all ) && run_command "rm -rf $target"
         ( $backup || $backup_all ) && run_command "mv $target $target.backup"
     fi
-    run_command "ln -s '$linkable' $target"
+    run_command "ln -s $linkable $target"
  done
 
 echo "Creating directory for ZSH customizations"
