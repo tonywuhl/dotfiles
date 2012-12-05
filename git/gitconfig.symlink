@@ -98,6 +98,7 @@
 [core]
   autocrlf = false
   editor = vim
+	quotepath = false
 [advice]
   statusHints = false
 [diff]
