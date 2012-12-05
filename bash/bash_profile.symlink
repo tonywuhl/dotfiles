@@ -11,6 +11,8 @@ for source_file in $DOTFILESDIR/common/*.sh; do
     source "$source_file"
 done
 
+source $DOTFILESDIR/bash/themes/mganjoo/mganjoo.theme.bash
+
 # Load file with sensitive information that shouldn't be checked in
 if [ -e ~/.secrets ]; then
     source ~/.secrets

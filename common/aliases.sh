@@ -34,7 +34,6 @@ alias ze='vi ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
-alias git='noglob git' # don't glob git to prevent conflicts
 alias gs='git status'
 alias gstsh='git stash'
 alias gst='git stash'
