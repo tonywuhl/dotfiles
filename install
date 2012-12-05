@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+run_command() {
+    echo "$1"
+    $($1)
+}
+
+install_homebrew() {
+  echo "Installing homebrew"
+  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+  echo "Installing homebrew packages"
+  brew install ack ctags git hub bash zsh tmux reattach-to-user-namespace
+}
+
+install_fonts() {
+  echo "Installing patched fonts for Powerline."
+  cp -f $DOTFILESDIR/fonts/* "$HOME/Library/Fonts"
+}
+
+# Update git submodules
+echo "Initializing submodules"
+git submodule update --init --recursive
+
+echo "Downloading submodules"
+cd "$DOTFILESDIR"
+git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -dfx'
+git clean -dfx
+
+# Find directory containing install script
+SOURCE="${BASH_SOURCE[0]}"
+DOTFILESDIR="$( dirname "$SOURCE" )"
+while [ -h "$SOURCE" ]
+do 
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+  DOTFILESDIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd )"
+done
+DOTFILESDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+if [[ "$(uname -s)" = "Darwin" ]]; then
+    install_homebrew
+    install_fonts
+fi
+
+linkables=()
+while read -r -d $'\0'; do
+    linkables+=("$REPLY")
+done < <(find $DOTFILESDIR -not \( -name .git -prune \) -iregex '.*\.symlink' -print0)
+
+overwrite_all=false
+skip_all=false
+backup_all=false
+
+for linkable in "${linkables[@]}"; do
+    overwrite=false
+    backup=false
+
+    file=${linkable##*/}
+    target="$HOME/.${file%.*}"
+    
+    if [[ -e $target ]]; then
+        if ! ( $skip_all || $overwrite_all || $backup_all ); then
+            read -p "File already exists: ${target}, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all (skip) ? " response
+            case $response in
+                o) overwrite=true ;;
+                b) backup=true ;;
+                O) overwrite_all=true ;;
+                B) backup_all=true ;;
+                S) skip_all=true ;;
+                *) continue ;;
+            esac
+        fi
+        $skip_all && continue
+        ( $overwrite || $overwrite_all ) && run_command "rm -rf $target"
+        ( $backup || $backup_all ) && run_command "mv $target $target.backup"
+    fi
+    run_command "ln -s '$linkable' $target"
+ done
+
+echo "Creating directory for ZSH customizations"
+run_command "mkdir -p $HOME/.zsh.before" 
+run_command "mkdir -p $HOME/.zsh.after" 
+run_command "mkdir -p $HOME/.zsh.prompts"
+
+echo "Installing bash it"
+$DOTFILESDIR/bash/install.sh
+
+echo "Installed all dotfiles."

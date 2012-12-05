@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+DOTFILESDIR=$HOME/.dotfiles
+
+export BASH_IT=$HOME/.bash_it
+export BASH_IT_THEME='mganjoo'
+source $BASH_IT/bash_it.sh
+
+# Source common files in repo
+for source_file in $DOTFILESDIR/common/*.sh; do
+    echo "$source_file"
+done
+
+# Load file with sensitive information that shouldn't be checked in
+if [ -e ~/.secrets ]; then
+    source ~/.secrets
+fi
+
+if [ -e ~/.bashrc ]; then
+    source ~/.bashrc
+fi

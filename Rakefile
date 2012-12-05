@@ -34,6 +34,9 @@ task :install => [:submodule_init, :submodules] do
         when 's' then next
         end
       end
+      if skip_all
+        next
+      end
       FileUtils.rm_rf(target) if overwrite || overwrite_all
       run %{mv "$HOME/.#{file}" "$HOME/.#{file}.backup"} if backup || backup_all
     end
