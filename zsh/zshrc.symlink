@@ -22,7 +22,7 @@ fi
 # Add directories to the path
 if [ -d $HOME/bin/ ]; then
     # Override path with user home directory at front
-    export PATH=$HOME/bin/:$PATH
+    export PATH=$HOME/bin/:/usr/local/bin:$PATH
 fi
 export PATH=$PATH:$DOTFILESDIR/bin
 
