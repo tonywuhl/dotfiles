@@ -3,7 +3,6 @@
 DOTFILESDIR=$HOME/.dotfiles
 
 export BASH_IT=$HOME/.bash_it
-export BASH_IT_THEME='candy'
 source $BASH_IT/bash_it.sh
 
 # Source common files in repo
