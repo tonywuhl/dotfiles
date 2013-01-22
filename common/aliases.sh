@@ -80,6 +80,7 @@ alias gpsh='git push'
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
+alias gcl='git clone'
 alias gcln='git clean'
 alias gclndf='git clean -df'
 alias gclndfx='git clean -dfx'
