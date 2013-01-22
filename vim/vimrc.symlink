@@ -10,11 +10,6 @@ endif
 " Load bundles
 source ~/.vimbundles
 
-" ================ Pathogen ==========================
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-
 " ================ General Config ====================
 set autoread                    "Reload files changed outside vim
 set backspace=indent,eol,start  "Allow backspace in insert mode
