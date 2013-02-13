@@ -23,8 +23,8 @@ alias du='du -h -d 2'
 alias lsg='ll | grep'
 
 # Alias Editing
-alias ae='vi $DOTFILESDIR/shared/aliases.sh' # alias edit
-alias ar='source $DOTFILESDIR/shared/aliases.sh'  # alias reload
+alias ae='vi $DOTFILESDIR/common/aliases.sh' # alias edit
+alias ar='source $DOTFILESDIR/common/aliases.sh'  # alias reload
 
 # .vimrc editing
 alias ve='vi ~/.vimrc'
@@ -32,6 +32,7 @@ alias ve='vi ~/.vimrc'
 # .zshrc editing and reloading
 alias ze='vi ~/.zshrc'
 alias zr='source ~/.zshrc'
+alias br='source ~/.bash_profile'
 
 # Git Aliases
 alias gs='git status'
@@ -107,3 +108,7 @@ alias k9='kill -9'
 
 # Gem install
 alias sgi='sudo gem install --no-ri --no-rdoc'
+
+# Screen aliases
+alias sc='screen -S'
+alias sr='screen -r'
