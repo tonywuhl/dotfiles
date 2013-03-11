@@ -1,10 +1,5 @@
 # Aliases in this file are bash and zsh compatible
 
-# YADR support
-alias yav='yadr vim-add-plugin'
-alias yup='yadr update-plugins'
-alias yip='yadr init-plugins'
-
 # Viewing processes
 alias psa="ps aux"
 alias psg="ps aux | grep "
@@ -100,7 +95,8 @@ alias lh='ls -alt | head' # see the last modified files
 alias cl='clear'
 
 # Archive files
-alias guz='tar -zcvf'
+alias guz='tar -zxvf'
+alias gz='tar -zcvf'
 
 # Kill
 alias ka9='killall -9'
