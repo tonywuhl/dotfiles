@@ -108,3 +108,8 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # Screen aliases
 alias sc='screen -S'
 alias sr='screen -r'
+
+# xsel aliases
+alias xcopy='xsel --clipboard --input'
+alias xpase='xsel --clipboard --output'
+
