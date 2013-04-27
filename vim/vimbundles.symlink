@@ -11,6 +11,7 @@ Bundle 'aaronjensen/vim-sass-status'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'astashov/vim-ruby-debugger'
 Bundle 'bootleq/vim-textobj-rubysymbol'
+Bundle 'daylerees/colour-schemes', { "rtp": "vim-themes/" }
 Bundle 'chrisbra/color_highlight'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'garbas/vim-snipmate'
