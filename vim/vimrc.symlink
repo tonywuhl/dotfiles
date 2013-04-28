@@ -21,6 +21,7 @@ set number               "Line numbers are good
 set showcmd              "Show incomplete cmds down the bottom
 set showmode             "Show current mode down the bottom
 set visualbell           "No sounds
+set shortmess+=I         "Disable startup message
 syntax on                "Syntax highlighting
 
 " ========= Search Settings =========
@@ -95,6 +96,7 @@ if has("gui_running")
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M
 endif
 
-" ========= Appearance =========
-set runtimepath+=~/.vim/extra/
-runtime keymap.vim
+" Note: additional configuration can be found in ~/.vim/plugin/settings
+" Ensure that you place a guard around settings that are dependent on 
+" certain packages being present.
+
