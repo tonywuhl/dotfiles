@@ -1,4 +1,4 @@
-scriptencoding utf-8  "Need to set this up for listchars 
+scriptencoding utf-8     "Need this for listchars to work properly
 set nocompatible
 filetype off
 
@@ -10,38 +10,26 @@ endif
 " Load bundles
 source ~/.vimbundles
 
-" ================ General Config ====================
-set autoread                    "Reload files changed outside vim
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set encoding=utf-8              "Ensure correct encoding
-set hidden                      "Buffers managed correctly
-set history=1000                "Store lots of :cmdline history
-set number                      "Line numbers are good
-set showcmd                     "Show incomplete cmds down the bottom
-set showmode                    "Show current mode down the bottom
-set visualbell                  "No sounds
-syntax on                       "Syntax highlighting
+" ========= General Settings =========
+set autoread             "Reload files changed outside vim
+set autowrite            "Save before :next, :make etc
+set bs=indent,eol,start  "Allow backspace in insert mode
+set enc=utf-8            "Ensure correct encoding
+set hidden               "Buffers managed correctly
+set history=1000         "Store lots of :cmdline history
+set number               "Line numbers are good
+set showcmd              "Show incomplete cmds down the bottom
+set showmode             "Show current mode down the bottom
+set visualbell           "No sounds
+syntax on                "Syntax highlighting
 
-" ================ Search Settings  =================
-set incsearch        "Find the next match as we type the search
-set hlsearch         "Highlight searches by default
-set ignorecase 
+" ========= Search Settings =========
+set incsearch            "Find the next match as we type the search
+set hlsearch             "Highlight searches by default
+set ignorecase
 set smartcase
 
-" ================ Turn Off Swap Files ==============
-set noswapfile
-set nobackup
-set nowb
-
-"" ================ Persistent Undo ==================
-"silent !mkdir ~/.vim/backups > /dev/null 2>&1
-"set undodir=~/.vim/backups
-"set undofile
-
-" ================ Indentation ======================
-set autoindent
-set smartindent
-set smarttab
+" ========= Indentation =========
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -51,20 +39,23 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
+" Note that scriptencoding utf-8 should be set for this to work
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
+set nowrap               "Don't wrap lines
+set linebreak            "Wrap lines at convenient points
 
-" ================ Folds ============================
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+" ========= Folds =========
+set foldmethod=indent   "Fold based on indent
+set foldnestmax=3       "Deepest fold is 3 levels
+set nofoldenable        "Don't fold by default
 
-" ================ Completion =======================
+" ========= Completion =========
 set wildmode=list:longest
-set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildmenu            "Enable C-n and C-p to scroll through matches
+
+ " Stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -75,24 +66,35 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" ================ Scrolling ========================
-set scrolloff=8  "Start scrolling when we're 8 lines away from margins
+" ========= Scrolling =========
+set scrolloff=8         "Start scrolling 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" ================ Appearance ========================
+" ========= Appearance ==========
+let macvim_skip_colorscheme=1   "Force MacVim to load our scheme
+set background=dark
+colorscheme ir_black
 if has("gui_running")
   set t_Co=256
   set lines=30
   set columns=90
-  set guifont=Source\ Code\ Pro:h13,Inconsolata\ XL:h14,Inconsolata:h17,Monaco:h14
+
+  " Set fonts
+  if has("gui_gtk2")
+    if (match(system("cat /etc/issue"), "Ubuntu") != -1)
+      set guifont=Ubuntu\ Mono\ 12
+    else
+      set guifont=Monospace\ 11
+    endif
+  elseif has("gui_macvim")
+    set guifont=Source\ Code\ Pro:h13
+  endif
 
   " Show tab number (useful for Cmd-1, Cmd-2.. mapping)
   autocmd VimEnter * set guitablabel=%N:\ %t\ %M
 endif
-colorscheme TronLegacy
-set background=dark
 
-" ================ Extra settings ========================
+" ========= Appearance =========
 set runtimepath+=~/.vim/extra/
 runtime keymap.vim

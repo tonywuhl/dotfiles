@@ -1,5 +1,2 @@
-let g:Powerline_symbols='fancy'
-let g:Powerline_theme='skwp'
-let g:Powerline_colorscheme='skwp'
-
-set laststatus=2 "always show the statusline
+set laststatus=2 "Always show the status line
+let g:Powerline_symbols = "fancy"
