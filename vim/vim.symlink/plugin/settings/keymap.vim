@@ -1,5 +1,7 @@
 " Arpeggio lets us define key-chord combos (simultaneous key presses)
-call arpeggio#load()
+if exists('*arpeggio#load')
+  call arpeggio#load()
+endif
 
 " ========================================
 " General vim sanity improvements
