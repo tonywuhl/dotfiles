@@ -7,6 +7,9 @@ if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
 endif
 
+" Change leader key (must be done first)
+let mapleader=","
+
 " Load bundles
 source ~/.vimbundles
 

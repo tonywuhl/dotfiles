@@ -113,3 +113,5 @@ alias sr='screen -r'
 alias xcopy='xsel --clipboard --input'
 alias xpase='xsel --clipboard --output'
 
+# SpiderMonkey strict
+alias jss='js -wsd -o strict -o werror'
