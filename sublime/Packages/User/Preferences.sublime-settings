@@ -2,12 +2,12 @@
 	"color_scheme": "Packages/Dayle Rees Color Schemes/Peacock.tmTheme",
 	"font_face": "Source Code Pro",
 	"font_size": 13,
-	"highlight_line": true,
+    "highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
 	],
 	"spell_check": false,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Soda Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
