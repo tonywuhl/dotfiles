@@ -11,3 +11,9 @@
 [submodule "sublime/Packages/Package Control"]
 	path = sublime/Packages/Package Control
 	url = https://github.com/wbond/sublime_package_control.git
+[submodule "sublime/Packages/Theme - Soda"]
+	path = sublime/Packages/Theme - Soda
+	url = https://github.com/buymeasoda/soda-theme.git
+[submodule "sublime/Packages/daylerees-themes"]
+	path = sublime/Packages/daylerees-themes
+	url = https://github.com/daylerees/colour-schemes.git

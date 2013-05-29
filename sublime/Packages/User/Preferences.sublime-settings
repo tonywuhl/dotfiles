@@ -1,11 +1,10 @@
 {
-	"color_scheme": "Packages/Dayle Rees Color Schemes/Peacock.tmTheme",
+	"color_scheme": "Packages/daylerees-themes/Peacock.tmTheme",
 	"font_face": "Source Code Pro",
 	"font_size": 13,
-    "highlight_line": true,
+	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
 	],
 	"spell_check": false,
 	"theme": "Soda Dark 3.sublime-theme",
