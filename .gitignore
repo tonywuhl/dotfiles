@@ -10,3 +10,4 @@ vim/after/.vimrc.after
 .netrwhist
 bin/subl
 tags
+sublime/Packages/User/Package Control.cache
