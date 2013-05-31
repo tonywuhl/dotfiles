@@ -17,3 +17,9 @@
 [submodule "sublime/Packages/daylerees-themes"]
 	path = sublime/Packages/daylerees-themes
 	url = https://github.com/daylerees/colour-schemes.git
+[submodule "sublime/Packages/SideBarEnhancements"]
+	path = sublime/Packages/SideBarEnhancements
+	url = https://github.com/titoBouzout/SideBarEnhancements.git
+[submodule "sublime/Packages/LaTeXTools"]
+	path = sublime/Packages/LaTeXTools
+	url = https://github.com/phyllisstein/LaTeXTools.git
