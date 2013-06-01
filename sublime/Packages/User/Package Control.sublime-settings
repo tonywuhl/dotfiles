@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"Emmet",
+		"GitGutter",
 		"Package Control",
 		"Syntax Highlighting for Sass"
 	]
