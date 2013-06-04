@@ -23,3 +23,6 @@
 [submodule "sublime/Packages/LaTeXTools"]
 	path = sublime/Packages/LaTeXTools
 	url = https://github.com/phyllisstein/LaTeXTools.git
+[submodule "sublime/Packages/SublimeFileDiffs"]
+	path = sublime/Packages/SublimeFileDiffs
+	url = https://github.com/colinta/SublimeFileDiffs.git
