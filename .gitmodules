@@ -26,3 +26,6 @@
 [submodule "sublime/Packages/SublimeFileDiffs"]
 	path = sublime/Packages/SublimeFileDiffs
 	url = https://github.com/colinta/SublimeFileDiffs.git
+[submodule "sublime/Packages/RailsFileSwitcher"]
+	path = sublime/Packages/RailsFileSwitcher
+	url = https://github.com/liggitt/SublimeText2RailsFileSwitcher.git
