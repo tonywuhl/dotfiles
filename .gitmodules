@@ -29,3 +29,12 @@
 [submodule "sublime/Packages/RailsFileSwitcher"]
 	path = sublime/Packages/RailsFileSwitcher
 	url = https://github.com/liggitt/SublimeText2RailsFileSwitcher.git
+[submodule "sublime/Packages/SublimeChangeQuotes"]
+	path = sublime/Packages/SublimeChangeQuotes
+	url = https://github.com/colinta/SublimeChangeQuotes.git
+[submodule "sublime/Packages/WordCount"]
+	path = sublime/Packages/WordCount
+	url = https://github.com/SublimeText/WordCount.git
+[submodule "sublime/Packages/SublimeLinter"]
+	path = sublime/Packages/SublimeLinter
+	url = https://github.com/SublimeLinter/SublimeLinter.git

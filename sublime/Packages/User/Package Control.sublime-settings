@@ -1,9 +1,11 @@
 {
 	"installed_packages":
 	[
+		"AutoWrap",
 		"Emmet",
 		"GitGutter",
 		"Package Control",
-		"Syntax Highlighting for Sass"
+		"Syntax Highlighting for Sass",
+		"Wrap Plus"
 	]
 }
