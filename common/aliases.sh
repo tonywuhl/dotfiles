@@ -115,3 +115,6 @@ alias xpase='xsel --clipboard --output'
 
 # SpiderMonkey strict
 alias jss='js -wsd -o strict -o werror'
+
+# Scala
+alias scala='scala -deprecation'
