@@ -2,11 +2,12 @@
 	"installed_packages":
 	[
 		"AutoWrap",
+		"Browser Refresh",
 		"Emmet",
 		"GitGutter",
+		"HTML Mustache",
 		"Package Control",
 		"Python IDE",
-		"ScalaWorksheet",
 		"Syntax Highlighting for Sass",
 		"Wrap Plus"
 	]
